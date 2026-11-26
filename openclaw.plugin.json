@@ -1,0 +1,46 @@
+{
+  "id": "whisper-server",
+  "name": "whisper.cpp Server",
+  "description": "Transcribes audio locally through a resident whisper.cpp server, so the model stays loaded between voice messages.",
+  "categories": ["voice"],
+  "activation": {
+    "onStartup": false
+  },
+  "contracts": {
+    "mediaUnderstandingProviders": ["whisper-server"]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "baseUrl": {
+        "type": "string",
+        "description": "Loopback URL of the running whisper.cpp server. Only localhost, 127.0.0.0/8 and ::1 are accepted.",
+        "default": "http://127.0.0.1:8080"
+      },
+      "inferencePath": {
+        "type": "string",
+        "description": "Inference path, matching the server's --inference-path.",
+        "default": "/inference"
+      },
+      "model": {
+        "type": "string",
+        "description": "Label reported as the transcription model, for example ggml-base.en. The server decides which model actually runs.",
+        "default": "whisper.cpp"
+      },
+      "maxQueuedRequests": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 32,
+        "description": "Requests that may wait while one is transcribing. The server handles one request at a time; further requests are refused.",
+        "default": 4
+      },
+      "temperature": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0
+      }
+    }
+  }
+}

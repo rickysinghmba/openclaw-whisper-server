@@ -1,0 +1,54 @@
+{
+  "name": "openclaw-whisper-server",
+  "version": "0.1.0",
+  "description": "Local audio transcription for OpenClaw through a resident whisper.cpp server, with the model kept loaded between requests.",
+  "type": "module",
+  "license": "MIT",
+  "author": "rickysinghmba",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickysinghmba/openclaw-whisper-server.git"
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "whisper",
+    "whisper.cpp",
+    "speech-to-text",
+    "transcription",
+    "local"
+  ],
+  "files": [
+    "dist",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test test/*.test.ts",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.11.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.2",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=24.16.0 <25 || >=26.1.0"
+  },
+  "openclaw": {
+    "extensions": ["./src/index.ts"],
+    "runtimeExtensions": ["./dist/index.js"],
+    "compat": {
+      "pluginApi": ">=2026.11.10",
+      "minGatewayVersion": "2026.11.10"
+    },
+    "build": {
+      "openclawVersion": "2026.11.10",
+      "pluginSdkVersion": "2026.11.10"
+    }
+  }
+}
