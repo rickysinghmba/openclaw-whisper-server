@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/icon.svg" width="128" height="128" alt=""></p>
+
 # openclaw-whisper-server
 
 Local audio transcription for [OpenClaw](https://openclaw.ai) through a resident
@@ -8,14 +10,15 @@ OpenClaw can already run `whisper-cli` locally, but it starts a new process and 
 for every message. This plugin connects OpenClaw to a `whisper-server` you keep running instead.
 Audio never leaves your machine, and there's no cloud fallback.
 
-> **Status: 0.1, early.** Tested on macOS (Apple Silicon) with OpenClaw 2026.11.10, whisper.cpp
-> v1.9.6 and ffmpeg 9.1: installed from the packed npm tarball and transcribed OGG/Opus, M4A/AAC and
-> WAV files end to end through `openclaw infer audio transcribe`. Linux and Gateway Talk haven't been
-> tested yet. Please report what you find.
+> **Status: 0.1, early.** Tested on macOS (Apple Silicon) with OpenClaw 2026.10.34
+> (extended-stable), 2026.11.9 and 2026.11.10, whisper.cpp v1.9.6 and ffmpeg 9.1: installed from the
+> packed npm tarball and transcribed OGG/Opus, M4A/AAC and WAV files end to end through
+> `openclaw infer audio transcribe`. Linux and Gateway Talk haven't been tested yet. Please report
+> what you find.
 
 ## Requirements
 
-- OpenClaw 2026.11.10 or later
+- OpenClaw 2026.10.34 or later
 - A whisper.cpp build that includes `whisper-server`. The Homebrew `whisper-cpp` package doesn't
   include the server, so build whisper.cpp from source.
 - `ffmpeg` on your `PATH`, so the server can convert voice notes (OGG/Opus, M4A, MP3) to WAV
@@ -55,13 +58,7 @@ openclaw plugins install openclaw-whisper-server --accept-capabilities
 
 `--accept-capabilities` consents to the plugin registering an audio transcription provider.
 
-Try it on a file:
-
-```bash
-openclaw infer audio transcribe --file ./memo.wav --model whisper-server/whisper.cpp --json
-```
-
-To use it for incoming voice messages, select it for audio in your OpenClaw config:
+Select it for audio in your OpenClaw config. This is what incoming voice messages use:
 
 ```json5
 {
@@ -72,6 +69,16 @@ To use it for incoming voice messages, select it for audio in your OpenClaw conf
   },
 }
 ```
+
+Try it on a file:
+
+```bash
+openclaw infer audio transcribe --file ./memo.wav --json
+```
+
+On OpenClaw 2026.10.34 and 2026.11.10 you can also skip the config and pass
+`--model whisper-server/whisper.cpp`. OpenClaw 2026.11.9 treats `--model` as a hint rather than a
+choice, so on that version use the config above.
 
 ## Configuration
 
