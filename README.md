@@ -8,8 +8,10 @@ OpenClaw can already run `whisper-cli` locally, but it starts a new process and 
 for every message. This plugin connects OpenClaw to a `whisper-server` you keep running instead.
 Audio never leaves your machine, and there's no cloud fallback.
 
-> **Status: 0.1, early.** The provider is unit-tested against a stand-in server. It hasn't yet been
-> tested end to end in a live OpenClaw Gateway. Please report what you find.
+> **Status: 0.1, early.** Tested on macOS (Apple Silicon) with OpenClaw 2026.11.10 and whisper.cpp
+> v1.9.6: installed from the packed npm tarball and transcribed a WAV file end to end through
+> `openclaw infer audio transcribe`. Compressed voice notes (which need the server's `--convert` and
+> `ffmpeg`), Linux, and Gateway Talk haven't been tested yet. Please report what you find.
 
 ## Requirements
 
@@ -48,10 +50,18 @@ Linux.
 ## Install the plugin
 
 ```bash
-openclaw plugins install openclaw-whisper-server
+openclaw plugins install openclaw-whisper-server --accept-capabilities
 ```
 
-Then select it for audio in your OpenClaw config:
+`--accept-capabilities` consents to the plugin registering an audio transcription provider.
+
+Try it on a file:
+
+```bash
+openclaw infer audio transcribe --file ./memo.wav --model whisper-server/whisper.cpp --json
+```
+
+To use it for incoming voice messages, select it for audio in your OpenClaw config:
 
 ```json5
 {

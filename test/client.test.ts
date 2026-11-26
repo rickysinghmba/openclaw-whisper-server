@@ -107,6 +107,14 @@ test("transcribes through /inference and returns the trimmed text with the model
   assert.match(upload.body, /name="prompt"\r\n\r\nnames: Ada/);
 });
 
+test("segment lines from the server are joined into running text", async (t) => {
+  const fake = await fakeWhisperServer(t, {
+    body: { text: " Hello from Open Claw.\n This voice message was transcribed\n by a resident whisper server.\n" },
+  });
+  const result = await transcribe(fake.settings, new RequestQueue(4), audio);
+  assert.equal(result.text, "Hello from Open Claw. This voice message was transcribed by a resident whisper server.");
+});
+
 test("health reports ok, loading and unreachable", async (t) => {
   assert.equal(await checkHealth((await fakeWhisperServer(t)).settings), "ok");
   assert.equal(await checkHealth((await fakeWhisperServer(t, { health: "loading" })).settings), "loading");

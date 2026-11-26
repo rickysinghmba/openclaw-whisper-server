@@ -232,6 +232,7 @@ export async function transcribe(
     if (typeof body?.text !== "string") {
       throw new WhisperServerError("bad-response", "whisper-server returned no transcript.");
     }
-    return { text: body.text.trim(), model: settings.model };
+    // The server puts each decoded segment on its own line; join them into running text.
+    return { text: body.text.replace(/\s*\n\s*/g, " ").trim(), model: settings.model };
   });
 }
