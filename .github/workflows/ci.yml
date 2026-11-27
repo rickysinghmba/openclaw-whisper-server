@@ -20,7 +20,11 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci --legacy-peer-deps
-      # The OpenClaw SDK is a peer dependency: install the version the plugin is built against.
-      - run: npm install --no-save --legacy-peer-deps --ignore-scripts openclaw@2026.11.10
+      # The OpenClaw SDK is a peer dependency. Install the version the plugin is built
+      # against outside the project and link it in, so npm doesn't skip it as a peer.
+      - name: Install OpenClaw SDK 2026.11.10
+        run: |
+          npm install --prefix "$RUNNER_TEMP/openclaw-sdk" --ignore-scripts --no-audit --no-fund openclaw@2026.11.10
+          ln -s "$RUNNER_TEMP/openclaw-sdk/node_modules/openclaw" node_modules/openclaw
       - run: npm test
       - run: npm run build
