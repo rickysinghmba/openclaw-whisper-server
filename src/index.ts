@@ -37,8 +37,8 @@ export function createWhisperServerProvider(pluginConfig: unknown): MediaUnderst
 
 export default definePluginEntry({
   id: PROVIDER_ID,
-  name: "whisper.cpp Server",
-  description: "Transcribes audio locally through a resident whisper.cpp server.",
+  name: "Whisper Speech-to-Text (local whisper.cpp server)",
+  description: "Local, offline speech-to-text: transcribes voice messages and audio through a resident whisper.cpp server.",
   register(api) {
     api.registerMediaUnderstandingProvider(createWhisperServerProvider(api.pluginConfig));
   },

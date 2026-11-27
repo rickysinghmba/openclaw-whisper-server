@@ -6,9 +6,10 @@
 [![ClawHub](https://img.shields.io/badge/ClawHub-plugin-22D3EE)](https://clawhub.ai/plugins/openclaw-whisper-server)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-Local audio transcription for [OpenClaw](https://openclaw.ai) through a resident
-[whisper.cpp](https://github.com/ggml-org/whisper.cpp) server. The model stays loaded between
-voice messages, so each transcription skips the model load.
+Local, offline speech-to-text (STT) for [OpenClaw](https://openclaw.ai). Voice messages and audio
+files are transcribed on your own machine through a resident
+[whisper.cpp](https://github.com/ggml-org/whisper.cpp) server. The Whisper model stays loaded
+between voice messages, so each transcription skips the model load.
 
 OpenClaw can already run `whisper-cli` locally, but it starts a new process and loads the model
 for every message. This plugin connects OpenClaw to a `whisper-server` you keep running instead.

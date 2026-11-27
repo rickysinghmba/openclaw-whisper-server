@@ -1,7 +1,7 @@
 {
   "name": "openclaw-whisper-server",
-  "version": "0.1.1",
-  "description": "Local audio transcription for OpenClaw through a resident whisper.cpp server, with the model kept loaded between requests.",
+  "version": "0.1.2",
+  "description": "Local, offline speech-to-text (STT) for OpenClaw: transcribe voice messages and audio on your own machine through a resident whisper.cpp server. Private voice transcription with no cloud fallback, and the Whisper model stays loaded between requests.",
   "type": "module",
   "license": "MIT",
   "author": "rickysinghmba",
@@ -15,8 +15,15 @@
     "whisper",
     "whisper.cpp",
     "speech-to-text",
+    "stt",
     "transcription",
-    "local"
+    "voice",
+    "voice-messages",
+    "audio",
+    "offline",
+    "local",
+    "private",
+    "self-hosted"
   ],
   "files": [
     "dist",
@@ -55,5 +62,9 @@
       "openclawVersion": "2026.11.10",
       "pluginSdkVersion": "2026.11.10"
     }
+  },
+  "homepage": "https://github.com/rickysinghmba/openclaw-whisper-server#readme",
+  "bugs": {
+    "url": "https://github.com/rickysinghmba/openclaw-whisper-server/issues"
   }
 }

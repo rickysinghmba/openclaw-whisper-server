@@ -1,13 +1,17 @@
 {
   "id": "whisper-server",
-  "name": "whisper.cpp Server",
-  "description": "Transcribes audio locally through a resident whisper.cpp server, so the model stays loaded between voice messages.",
-  "categories": ["voice"],
+  "name": "Whisper Speech-to-Text (local whisper.cpp server)",
+  "description": "Local, offline speech-to-text (STT) for OpenClaw: transcribe voice messages and audio on your own machine through a resident whisper.cpp server. Private voice transcription with no cloud fallback, and the Whisper model stays loaded between requests.",
+  "categories": [
+    "voice"
+  ],
   "activation": {
     "onStartup": false
   },
   "contracts": {
-    "mediaUnderstandingProviders": ["whisper-server"]
+    "mediaUnderstandingProviders": [
+      "whisper-server"
+    ]
   },
   "configSchema": {
     "type": "object",
