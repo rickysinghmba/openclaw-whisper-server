@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest something the plugin should do.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do
+      description: The situation you're in, not only the feature you'd like.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+  - type: checkboxes
+    id: roadmap
+    attributes:
+      label: Roadmap
+      options:
+        - label: I checked ROADMAP.md and the open issues for this.

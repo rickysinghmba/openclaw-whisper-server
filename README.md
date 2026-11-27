@@ -2,6 +2,10 @@
 
 # openclaw-whisper-server
 
+[![CI](https://github.com/rickysinghmba/openclaw-whisper-server/actions/workflows/ci.yml/badge.svg)](https://github.com/rickysinghmba/openclaw-whisper-server/actions/workflows/ci.yml)
+[![ClawHub](https://img.shields.io/badge/ClawHub-plugin-22D3EE)](https://clawhub.ai/plugins/openclaw-whisper-server)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Local audio transcription for [OpenClaw](https://openclaw.ai) through a resident
 [whisper.cpp](https://github.com/ggml-org/whisper.cpp) server. The model stays loaded between
 voice messages, so each transcription skips the model load.

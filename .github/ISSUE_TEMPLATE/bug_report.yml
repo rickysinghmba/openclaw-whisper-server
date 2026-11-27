@@ -1,0 +1,41 @@
+name: Bug report
+description: Something doesn't work as the README says it should.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: plugin
+    attributes:
+      label: Plugin version
+      placeholder: "0.1.1"
+    validations:
+      required: true
+  - type: input
+    id: openclaw
+    attributes:
+      label: OpenClaw version
+      description: Output of `openclaw --version`.
+    validations:
+      required: true
+  - type: input
+    id: whisper
+    attributes:
+      label: whisper.cpp version and model
+      placeholder: "v1.9.6, base.en"
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "macOS 26, Ubuntu 24.04"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Relevant lines from the OpenClaw log. Remove passwords, tokens and private addresses first.
+      render: text
