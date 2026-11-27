@@ -105,6 +105,10 @@ Settings go under `plugins.entries.whisper-server.config`. All are optional.
 - **No fallback.** If transcription fails, the error goes back to OpenClaw. The plugin never sends
   audio anywhere else.
 
+## Roadmap
+
+See [ROADMAP.md](https://github.com/rickysinghmba/openclaw-whisper-server/blob/main/ROADMAP.md) for what is planned next.
+
 ## Development
 
 ```bash
