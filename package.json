@@ -1,6 +1,6 @@
 {
   "name": "openclaw-whisper-server",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Local, offline speech-to-text (STT) for OpenClaw: transcribe voice messages and audio on your own machine through a resident whisper.cpp server. Private voice transcription with no cloud fallback, and the Whisper model stays loaded between requests.",
   "type": "module",
   "license": "MIT",

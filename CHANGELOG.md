@@ -2,6 +2,11 @@
 
 Notable changes to this project. Versions follow [semantic versioning](https://semver.org).
 
+## 0.1.3 - 2026-11-27
+
+- README: the introduction now comes first, so the collapsed preview on ClawHub shows what the
+  plugin does. No behaviour changes.
+
 ## 0.1.2 - 2026-11-27
 
 - Clearer name and description so the plugin can be found by searching for speech-to-text, STT,
