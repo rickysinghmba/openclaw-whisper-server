@@ -1,10 +1,4 @@
-<p align="center"><img src="assets/icon.svg" width="128" height="128" alt=""></p>
-
 # openclaw-whisper-server
-
-[![CI](https://github.com/rickysinghmba/openclaw-whisper-server/actions/workflows/ci.yml/badge.svg)](https://github.com/rickysinghmba/openclaw-whisper-server/actions/workflows/ci.yml)
-[![ClawHub](https://img.shields.io/badge/ClawHub-plugin-22D3EE)](https://clawhub.ai/plugins/openclaw-whisper-server)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 Local, offline speech-to-text (STT) for [OpenClaw](https://openclaw.ai). Voice messages and audio
 files are transcribed on your own machine through a resident
@@ -14,6 +8,8 @@ between voice messages, so each transcription skips the model load.
 OpenClaw can already run `whisper-cli` locally, but it starts a new process and loads the model
 for every message. This plugin connects OpenClaw to a `whisper-server` you keep running instead.
 Audio never leaves your machine, and there's no cloud fallback.
+
+[![CI](https://github.com/rickysinghmba/openclaw-whisper-server/actions/workflows/ci.yml/badge.svg)](https://github.com/rickysinghmba/openclaw-whisper-server/actions/workflows/ci.yml) [![ClawHub](https://img.shields.io/badge/ClawHub-plugin-22D3EE)](https://clawhub.ai/rickysinghmba/plugins/openclaw-whisper-server) [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 > **Status: 0.1, early.** Tested on macOS (Apple Silicon) with OpenClaw 2026.10.34
 > (extended-stable), 2026.11.9 and 2026.11.10, whisper.cpp v1.9.6 and ffmpeg 9.1: installed from the
