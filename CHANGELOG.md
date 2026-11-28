@@ -2,6 +2,11 @@
 
 Notable changes to this project. Versions follow [semantic versioning](https://semver.org).
 
+## Unreleased
+
+- Added a `whisper-server` setup skill under `skills/whisper-server`: instructions, a read-only
+  check script, and launchd and systemd templates. The plugin itself is unchanged.
+
 ## 0.1.3 - 2026-11-27
 
 - README: the introduction now comes first, so the collapsed preview on ClawHub shows what the

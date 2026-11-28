@@ -106,6 +106,13 @@ Settings go under `plugins.entries.whisper-server.config`. All are optional.
 - **No fallback.** If transcription fails, the error goes back to OpenClaw. The plugin never sends
   audio anywhere else.
 
+## Setup skill
+
+The repo also has a `whisper-server` skill for OpenClaw agents, in
+[skills/whisper-server](https://github.com/rickysinghmba/openclaw-whisper-server/tree/main/skills/whisper-server).
+It walks the agent through the setup above, asks before each change, and includes a read-only
+check script plus launchd and systemd templates for keeping the server running.
+
 ## Roadmap
 
 See [ROADMAP.md](https://github.com/rickysinghmba/openclaw-whisper-server/blob/main/ROADMAP.md) for what is planned next.

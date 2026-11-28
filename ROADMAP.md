@@ -11,9 +11,8 @@ matters to you or is missing.
 ## Next: 0.2
 
 - Verify Gateway Talk (live voice) and fix what breaks.
-- Ready-made service files so `whisper-server` starts at login: a launchd agent for macOS and a
-  systemd user service for Linux.
-- A setup check that says what's wrong: server down, model still loading, or `ffmpeg` missing.
+- Test the setup skill's service templates end to end. The launchd one is based on an agent
+  that runs on macOS; the systemd one is untested.
 
 ## Later
 
